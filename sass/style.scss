@@ -7,7 +7,7 @@
   --phone-font: 17px;
 
   // Light theme colors (default)
-  --bg-color: #f2e4be;
+  --bg-color: #edd892;
   --text-color: #111111;
   --nav-color: #333333;
   --nav-hover: #000000;
@@ -318,7 +318,7 @@ footer {
 
 .posts-list li .post-header h2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -333,14 +333,14 @@ footer {
 }
 
 .posts-list li .post-date {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--card-text);
   white-space: nowrap; /* Prevents date from wrapping */
 }
 
 .posts-list li .summary {
   color: var(--card-text);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -444,7 +444,7 @@ table {
 
 .post-header .post-meta {
   color: var(--card-text);
-  font-size: 0.9rem;
+  font-size: 1rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -465,7 +465,7 @@ table {
   background: var(--card-bg);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 /* Post Content Styles */
@@ -531,7 +531,7 @@ table {
   word-wrap: break-word;
 
   @media (max-width: 768px) {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 }
 
@@ -608,7 +608,7 @@ table {
 }
 
 .post-link .post-date {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--card-text);
 }
 
