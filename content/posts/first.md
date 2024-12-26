@@ -1,8 +1,8 @@
 +++
-title = "My First Post"
+title = "Placeholder Post"
 date = 2024-03-20
-description = "Description of your post"
-slug = "first"
+description = "Placeholder to test features!"
+slug = "placeholder"
 # [taxonomies]
 # tags = ["tag1", "tag2"]
 +++
@@ -62,7 +62,7 @@ Here is an image:
 ![placeholder](https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp)
 
 Can it render math?
-$E = mc^2$. Yes!
+$E = mc^2$. Yes! 🎉
 
 Can it render inline math?
 $$ f(x) = \alpha_v \times x $$

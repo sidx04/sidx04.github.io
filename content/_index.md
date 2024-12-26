@@ -17,6 +17,7 @@ Feel free to reach out to me. I'm up for a conversation about almost anything. I
 
 - ![](https://cdn-icons-png.flaticon.com/128/536/536452.png) [Github](https://github.com/sidx04)
 - ![](https://cdn-icons-png.flaticon.com/128/324/324123.png) <a class="u-email" href="mailto:siddpal04@gmail.com">Email</a>
+- ![](https://cdn-icons-png.flaticon.com/128/15047/15047560.png) [Discord](https://discordapp.com/users/768824812360433706)
 - ![](https://cdn-icons-png.flaticon.com/128/1383/1383263.png) [Instagram](https://www.instagram.com/rawonionx)
 - ![](https://cdn-icons-png.flaticon.com/128/1383/1383262.png) [LinkedIn](https://www.linkedin.com/in/siddhartha-pal-902a5a248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) (I'm not very active here)
 
