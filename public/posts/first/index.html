@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      My First Post | Onion House
+    </title>
+    <link rel="stylesheet" href="https://sidx04.github.io/style.css" />
+
+    <link rel="icon" href="https://sidx04.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="https://sidx04.github.io/site.webmanifest" />
+
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body>
+    <!-- <nav class="navigation">
+        <a href="https:&#x2F;&#x2F;sidx04.github.io" >/home</a>
+        <a href="https://sidx04.github.io/about" >/about</a>
+        <a href="https://sidx04.github.io/posts" class="active">/posts</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+    </nav> -->
+
+    <nav class="navigation">
+      <div class="navigation-menu">
+        <a href="https:&#x2F;&#x2F;sidx04.github.io" >/home</a>
+        <!-- <a href="https://sidx04.github.io/about" >/about</a> -->
+        <a href="https://sidx04.github.io/posts" class="active">/posts</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+<article class="post">
+  <!-- Back Button -->
+  <div class="back-button">
+    <a href="/posts" aria-label="Back to Posts">&larr; Back to Posts</a>
+  </div>
+
+  <header class="post-header">
+    <h1 class="post-title">My First Post</h1>
+    <div class="post-meta">
+      
+      <time>March 20, 2024.</time>  
+    </div>
+  </header>
+
+  <div class="post-content"><p>This is the content of my first post.</p>
+<p>Here is some code:</p>
+<pre data-lang="rust" style="background-color:#282828;color:#fdf4c1aa;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="font-style:italic;color:#928374;">// Unlike C/C++, there&#39;s no restriction on the order of function definitions
+</span><span style="color:#fa5c4b;">fn </span><span style="color:#8ec07c;">main</span><span>() {
+</span><span>    </span><span style="font-style:italic;color:#928374;">// We can use this function here, and define it somewhere later
+</span><span>    </span><span style="color:#fabd2f;">fizzbuzz_to</span><span>(</span><span style="color:#d3869b;">100</span><span>);
+</span><span>}
+</span><span>
+</span><span style="font-style:italic;color:#928374;">// Function that returns a boolean value
+</span><span style="color:#fa5c4b;">fn </span><span style="color:#8ec07c;">is_divisible_by</span><span>(</span><span style="color:#fdf4c1;">lhs</span><span>: </span><span style="color:#fa5c4b;">u32</span><span>, </span><span style="color:#fdf4c1;">rhs</span><span>: </span><span style="color:#fa5c4b;">u32</span><span>) -&gt; </span><span style="color:#fa5c4b;">bool </span><span>{
+</span><span>    </span><span style="font-style:italic;color:#928374;">// Corner case, early return
+</span><span>    </span><span style="color:#fa5c4b;">if</span><span> rhs </span><span style="color:#fe8019;">== </span><span style="color:#d3869b;">0 </span><span>{
+</span><span>        </span><span style="color:#fa5c4b;">return </span><span style="color:#d3869b;">false</span><span>;
+</span><span>    }
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#928374;">// This is an expression, the `return` keyword is not necessary here
+</span><span>    lhs </span><span style="color:#fe8019;">%</span><span> rhs </span><span style="color:#fe8019;">== </span><span style="color:#d3869b;">0
+</span><span>}
+</span><span>
+</span><span style="font-style:italic;color:#928374;">// Functions that &quot;don&#39;t&quot; return a value, actually return the unit type `()`
+</span><span style="color:#fa5c4b;">fn </span><span style="color:#8ec07c;">fizzbuzz</span><span>(</span><span style="color:#fdf4c1;">n</span><span>: </span><span style="color:#fa5c4b;">u32</span><span>) -&gt; () {
+</span><span>    </span><span style="color:#fa5c4b;">if </span><span style="color:#fabd2f;">is_divisible_by</span><span>(n, </span><span style="color:#d3869b;">15</span><span>) {
+</span><span>        </span><span style="color:#fabd2f;">println!</span><span>(</span><span style="color:#b8bb26;">&quot;fizzbuzz&quot;</span><span>);
+</span><span>    } </span><span style="color:#fa5c4b;">else if </span><span style="color:#fabd2f;">is_divisible_by</span><span>(n, </span><span style="color:#d3869b;">3</span><span>) {
+</span><span>        </span><span style="color:#fabd2f;">println!</span><span>(</span><span style="color:#b8bb26;">&quot;fizz&quot;</span><span>);
+</span><span>    } </span><span style="color:#fa5c4b;">else if </span><span style="color:#fabd2f;">is_divisible_by</span><span>(n, </span><span style="color:#d3869b;">5</span><span>) {
+</span><span>        </span><span style="color:#fabd2f;">println!</span><span>(</span><span style="color:#b8bb26;">&quot;buzz&quot;</span><span>);
+</span><span>    } </span><span style="color:#fa5c4b;">else </span><span>{
+</span><span>        </span><span style="color:#fabd2f;">println!</span><span>(</span><span style="color:#b8bb26;">&quot;</span><span style="color:#fdf4c1;">{}</span><span style="color:#b8bb26;">&quot;</span><span>, n);
+</span><span>    }
+</span><span>}
+</span><span>
+</span><span style="font-style:italic;color:#928374;">// When a function returns `()`, the return type can be omitted from the
+</span><span style="font-style:italic;color:#928374;">// signature
+</span><span style="color:#fa5c4b;">fn </span><span style="color:#8ec07c;">fizzbuzz_to</span><span>(</span><span style="color:#fdf4c1;">n</span><span>: </span><span style="color:#fa5c4b;">u32</span><span>) {
+</span><span>    </span><span style="color:#fa5c4b;">for</span><span> n </span><span style="color:#fe8019;">in </span><span style="color:#d3869b;">1</span><span style="color:#fe8019;">..=</span><span>n {
+</span><span>        </span><span style="color:#fabd2f;">fizzbuzz</span><span>(n);
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p>Here is a <a href="https://sidx04.github.io">link</a>.</p>
+<h2 id="here-is-a-long-paragraph">Here is a long paragraph:</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia architecto tempore voluptatem deserunt recusandae obcaecati dolorem, sed dolorum quasi perspiciatis rem assumenda quidem vel eius debitis pariatur. Dolorum, fuga harum.</p>
+<p>Here is an image:</p>
+<p><img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="placeholder" /></p>
+<p>Can it render math?
+$E = mc^2$. Yes!</p>
+<p>Can it render inline math?
+$$ f(x) = \alpha_v \times x $$</p>
+</div>
+
+  <div class="back-button">
+    <a href="/posts" aria-label="Back to Posts">&larr; Go Back </a>
+  </div>
+</article>
+</main>
+    <footer>
+      <div class="footer">&copy; 2024, Siddhartha.</div>
+    </footer>
+
+    <script src="/scripts/theme.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async
+    ></script>
+  </body>
+</html>
