@@ -320,6 +320,10 @@ footer {
   margin: 0;
   font-size: 1.25rem;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 }
 
 .posts-list li .post-header h2 a {
@@ -336,12 +340,20 @@ footer {
   font-size: 0.8rem;
   color: var(--card-text);
   white-space: nowrap; /* Prevents date from wrapping */
+
+  @media (max-width: 768px) {
+    font-size: 0.65rem;
+  }
 }
 
 .posts-list li .summary {
   color: var(--card-text);
   font-size: 0.9rem;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
 }
 
 // Code block styles optimized for Zola's default output
