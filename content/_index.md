@@ -7,7 +7,7 @@ template = "index.html"
 
 There's nearly 1.1 billion websites on the internet and funny enough, you've stumbled acrossed this one today.
 
-I made this website to primarily serve as my personal yapping zone. Mostly gonna blog about technical stuffs which I'll try my best to explain in layman terms. Check out the <a href="/posts">posts</a> section.
+I made this website to primarily serve as my personal yapping zone. Mostly gonna blog about technical stuff which I'll try my best to explain in layman terms. Check out the <a href="/posts">posts</a> section.
 
 Anyways before you get bored, I'm <b>Siddhartha</b> <span class="pronc">(/🔊:"s-ih-d-dh-aa-r-th-oh"/)</span>, btw. I <strike>like to</strike> write code until it gets painful. My current interests are inclined towards applied cryptography, notably on [Zero-Knowledge Proof Systems](https://en.wikipedia.org/wiki/Zero-knowledge_proof) ; and exploring the core system of [Ethereum](https://ethereum.org).
 
