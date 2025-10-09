@@ -21,4 +21,4 @@ Feel free to reach out to me. I'm up for a conversation about almost anything. I
 - ![](https://cdn-icons-png.flaticon.com/128/1383/1383263.png) [Instagram](https://www.instagram.com/rawonionx)
 - ![](https://cdn-icons-png.flaticon.com/128/1383/1383262.png) [LinkedIn](https://www.linkedin.com/in/siddhartha-pal-902a5a248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) (I'm not very active here)
 
-That being said, as Truman Bubank says: <q>In case I don't see ya, good afternoon, good evening, and good night!</q>
+And in case I don't see ya again, good afternoon, good evening, and good night!
