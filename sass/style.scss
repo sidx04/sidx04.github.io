@@ -1,85 +1,96 @@
 // Theme variables
 :root {
-  --max-width: 800px;
+  --max-width: 900px;
   --padding-mobile: 1.5rem;
   --padding-desktop: 2rem;
   --normal-font: 20px;
   --phone-font: 17px;
 
   // Light theme colors (default)
-  --bg-color: #edd892;
+  --bg-color: linear-gradient(135deg, #edd892 0%, #f4e4a6 50%, #e8d285 100%);
   --text-color: #111111;
   --nav-color: #333333;
   --nav-hover: #000000;
-  --card-bg: #97ac877e;
+  --card-bg: linear-gradient(145deg, rgba(151, 172, 135, 0.5) 0%, rgba(180, 195, 160, 0.4) 100%);
   --card-text: #666666;
   --border-color: #2e2e2e;
   --back-button-hover-color: #504897;
   --link-color: #2c218b;
   --weak-color: #575757;
+
+  // Gradient variations for different elements
+  --subtle-gradient: linear-gradient(to bottom, rgba(237, 216, 146, 0.8), rgba(244, 228, 166, 0.6));
+  --accent-gradient: linear-gradient(45deg, #97ac87, #b4c3a0);
 }
 
 // Dark theme colors
 [data-theme="dark"] {
-  --bg-color: #1a1a1a;
+  --bg-color: linear-gradient(135deg, #1a1a1a 0%, #242424 50%, #1e1e1e 100%);
   --text-color: #e0e0e0;
   --nav-color: #e0e0e0;
   --nav-hover: #ffffff;
-  --card-bg: #2a2a2a;
+  --card-bg: linear-gradient(145deg, #2a2a2a 0%, #323232 100%);
   --card-text: #b0b0b0;
   --border-color: #404040;
   --back-button-hover-color: #edd892;
   --link-color: #d3869b;
   --weak-color: #a3a3a3;
+
+  // Gradient variations for different elements
+  --subtle-gradient: linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(36, 36, 36, 0.7));
+  --accent-gradient: linear-gradient(45deg, #2a2a2a, #3a3a3a);
 }
 
-@font-face {
-  font-family: "Ubuntu Propo";
-  src: url("../fonts/UbuntuMonoWOFF2/UbuntuMonoNerdFontPropo-Regular.woff2")
-    format("woff2");
-}
+// @font-face {
+//   font-family: "Ubuntu Propo";
+//   src: url("../fonts/UbuntuMonoWOFF2/UbuntuMonoNerdFontPropo-Regular.woff2") format("woff2");
+// }
 
-@font-face {
-  font-family: "Ubuntu Mono";
-  src: url("../fonts/UbuntuMonoWOFF2/UbuntuMonoNerdFontPropo-Regular.woff2")
-    format("woff2");
-}
+// @font-face {
+//   font-family: "Ubuntu Mono";
+//   src: url("../fonts/UbuntuMonoWOFF2/UbuntuMonoNerdFontPropo-Regular.woff2") format("woff2");
+// }
 
-@font-face {
-  font-family: "EBG Regular";
-  src: url("../fonts/EBGWOFF2/EBGaramond-Regular.woff2");
-}
+// @font-face {
+//   font-family: "EBG Regular";
+//   src: url("../fonts/EBGWOFF2/EBGaramond-Regular.woff2");
+// }
 
-@font-face {
-  font-family: "EBG SemiBold";
-  src: url("../fonts/EBGWOFF2/EBGaramond-SemiBold.woff2");
-}
+// @font-face {
+//   font-family: "EBG SemiBold";
+//   src: url("../fonts/EBGWOFF2/EBGaramond-SemiBold.woff2");
+// }
 
-@font-face {
-  font-family: "EBG Italic";
-  src: url("../fonts/EBGWOFF2/EBGaramond-Italic.woff2");
-}
+// @font-face {
+//   font-family: "EBG Italic";
+//   src: url("../fonts/EBGWOFF2/EBGaramond-Italic.woff2");
+// }
 
-@font-face {
-  font-family: "EBG SemiBoldItalic";
-  src: url("../fonts/EBGWOFF2/EBGaramond-SemiBoldItalic.woff2");
-}
+// @font-face {
+//   font-family: "EBG SemiBoldItalic";
+//   src: url("../fonts/EBGWOFF2/EBGaramond-SemiBoldItalic.woff2");
+// }
 
-@font-face {
-  font-family: "EBG BoldItalic";
-  src: url("../fonts/EBGWOFF2/EBGaramond-BoldItalic.woff2");
-}
+// @font-face {
+//   font-family: "EBG BoldItalic";
+//   src: url("../fonts/EBGWOFF2/EBGaramond-BoldItalic.woff2");
+// }
 
-@font-face {
-  font-family: "EBG MediumItalic";
-  src: url("../fonts/EBGWOFF2/EBGaramond-MediumItalic.woff2") format("woff2");
-}
+// @font-face {
+//   font-family: "EBG MediumItalic";
+//   src: url("../fonts/EBGWOFF2/EBGaramond-MediumItalic.woff2") format("woff2");
+// }
+
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/bright.css");
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 
 // Base styles
 html {
   font-size: var(--normal-font);
   box-sizing: border-box;
-  height: 100%;
+  min-height: 100vh;
+  background: var(--bg-color);
+  background-attachment: fixed;
 
   &.theme-loaded {
     visibility: visible;
@@ -98,12 +109,13 @@ html:not(.theme-loaded) * {
 
 body {
   // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-family: "EBG Regular" !important;
+  font-family: "Computer Modern Bright", sans-serif;
+  font-weight: 500;
   line-height: 1.6;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--padding-desktop);
-  background-color: var(--bg-color);
+  background: transparent;
   color: var(--text-color);
   // transition: background-color 0.3s ease, color 0.3s ease;
   // Add flex layout for sticky footer
@@ -132,7 +144,7 @@ footer {
   // transition: border-color 0.3s ease;
 
   .footer {
-    font-family: "EBG SemiBoldItalic";
+    font-family: "Computer Modern Typewriter", monospace;
     letter-spacing: 1px;
     text-align: center;
     color: var(--text-color);
@@ -172,6 +184,7 @@ footer {
   .icon-sun {
     display: none;
   }
+
   .icon-moon {
     display: block;
   }
@@ -215,8 +228,9 @@ footer {
 .navigation-menu {
   // display: none;
   // position: fixed;
-  font-family: "EBG MediumItalic" !important;
-  letter-spacing: 1.5px;
+  // font-family: "EBG MediumItalic" !important;
+  font-family: "Computer Modern Typewriter", monospace;
+  letter-spacing: 0.5px;
   top: 0;
   left: 0;
   width: 100%;
@@ -235,7 +249,8 @@ footer {
 
 @media (max-width: 480px) {
   .navigation-menu a {
-    margin-right: 0.5rem; /* Adjust spacing for smaller screens */
+    margin-right: 0.5rem;
+    /* Adjust spacing for smaller screens */
     font-size: small;
   }
 }
@@ -253,7 +268,8 @@ footer {
 
 // ABOUT:
 .about-content h1 {
-  font-family: "EBG BoldItalic";
+  font-family: "Computer Modern Serif", serif;
+  font-style: italic;
   font-size: 2.5rem;
   margin-top: 0rem;
 }
@@ -339,7 +355,8 @@ footer {
 .posts-list li .post-date {
   font-size: 0.8rem;
   color: var(--card-text);
-  white-space: nowrap; /* Prevents date from wrapping */
+  white-space: nowrap;
+  /* Prevents date from wrapping */
 
   @media (max-width: 768px) {
     font-size: 0.65rem;
@@ -431,6 +448,7 @@ pre {
 
 // Tables
 table {
+
   th,
   td {
     border-color: var(--border-color);
@@ -538,8 +556,10 @@ table {
   margin: 1rem 0;
 }
 
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/typewriter.css");
+
 .post-content pre code {
-  font-family: "Ubuntu Mono";
+  font-family: "Computer Modern Typewriter", monospace;
   word-wrap: break-word;
 
   @media (max-width: 768px) {
@@ -555,8 +575,10 @@ table {
 }
 
 .MathJax {
-  font-size: var(--normal-font) !important; /* Match normal text size */
-  line-height: 1; /* Match normal text line height */
+  font-size: var(--normal-font) !important;
+  /* Match normal text size */
+  line-height: 1;
+  /* Match normal text line height */
 
   @media (max-width: 768px) {
     font-size: var(--phone-font) !important;
@@ -564,11 +586,16 @@ table {
 }
 
 .MJX-TEX {
-  display: inline !important; /* Display block equations properly */
-  margin: 1rem 0; /* Add spacing around block equations */
-  white-space: normal !important; /* Allow the text to wrap to the next line */
-  word-wrap: break-word; /* Ensure words break if they're too long */
-  overflow-wrap: break-word; /* Modern equivalent for wrapping long text */
+  display: inline !important;
+  /* Display block equations properly */
+  margin: 1rem 0;
+  /* Add spacing around block equations */
+  white-space: normal !important;
+  /* Allow the text to wrap to the next line */
+  word-wrap: break-word;
+  /* Ensure words break if they're too long */
+  overflow-wrap: break-word;
+  /* Modern equivalent for wrapping long text */
 }
 
 /* Back Button Styles */
@@ -649,4 +676,136 @@ table {
 
 .search-bar:focus {
   box-shadow: 0 0 4px var(--nav-hover);
+}
+
+// Pagination Styles
+.pagination {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  // border-top: 1px solid var(--border-color);
+}
+
+.pagination-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  .pagination-text {
+    color: var(--card-text);
+    font-size: 0.9rem;
+    font-family: "Computer Modern Typewriter", monospace;
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 0.25rem;
+  }
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+
+  &:hover:not(.disabled) {
+    background: var(--accent-gradient);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: var(--weak-color);
+  }
+
+  i {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 1rem;
+
+  @media (max-width: 768px) {
+    margin: 0 0.5rem;
+  }
+}
+
+.pagination-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0.5rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+
+  &:hover:not(.active) {
+    background: var(--accent-gradient);
+    transform: translateY(-1px);
+  }
+
+  &.active {
+    background: var(--bg-color+#ffff);
+    color: var(--bg-color);
+    font-weight: bold;
+    cursor: default;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+}
+
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: var(--weak-color);
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    min-width: 35px;
+    height: 35px;
+  }
 }

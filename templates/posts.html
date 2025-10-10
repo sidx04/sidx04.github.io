@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <ul class="posts-list">
-  {% for page in section.pages %}
+  {% for page in paginator.pages %}
   <li>
     <a href="{{ page.permalink }}" class="post-link">
       <div class="post-header">
@@ -15,5 +15,77 @@
   </li>
   {% endfor %}
 </ul>
+
+<!-- Pagination Controls -->
+{% if paginator %}
+<div class="pagination">
+  <div class="pagination-info">
+    <span class="pagination-text">
+      Showing {{ paginator.current_index }} of {{ paginator.number_pagers }} pages
+      ({{ paginator.total_pages }} posts total)
+    </span>
+  </div>
+
+  <div class="pagination-controls">
+    <!-- Previous Page -->
+    {% if paginator.previous %}
+    <a href="{{ paginator.previous }}" class="pagination-btn pagination-prev" aria-label="Previous page">
+      <i data-lucide="chevron-left"></i>
+      <span>Previous</span>
+    </a>
+    {% else %}
+    <span class="pagination-btn pagination-prev disabled">
+      <i data-lucide="chevron-left"></i>
+      <span>Previous</span>
+    </span>
+    {% endif %}
+
+    <!-- Page Numbers -->
+    <div class="pagination-numbers">
+      <!-- First page if we're not close to the beginning -->
+      {% if paginator.current_index > 3 %}
+      <a href="{{ paginator.first }}" class="pagination-number">1</a>
+      {% if paginator.current_index > 4 %}
+      <span class="pagination-ellipsis">...</span>
+      {% endif %}
+      {% endif %}
+
+      <!-- Page numbers around current page -->
+      {% for page_num in range(start=1, end=paginator.number_pagers + 1) %}
+      {% if page_num >= paginator.current_index - 2 and page_num <= paginator.current_index + 2 %} {% if
+        page_num==paginator.current_index %} <span class="pagination-number active">{{ page_num }}</span>
+        {% else %}
+        {% if page_num == 1 %}
+        <a href="{{ paginator.first }}" class="pagination-number">{{ page_num }}</a>
+        {% else %}
+        <a href="/posts/page/{{ page_num }}" class="pagination-number">{{ page_num }}</a>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+        <!-- Last page if we're not close to the end -->
+        {% if paginator.current_index < paginator.number_pagers - 2 %} {% if paginator.current_index <
+          paginator.number_pagers - 3 %} <span class="pagination-ellipsis">...</span>
+          {% endif %}
+          <a href="{{ paginator.last }}" class="pagination-number">{{ paginator.number_pagers }}</a>
+          {% endif %}
+    </div>
+
+    <!-- Next Page -->
+    {% if paginator.next %}
+    <a href="{{ paginator.next }}" class="pagination-btn pagination-next" aria-label="Next page">
+      <span>Next</span>
+      <i data-lucide="chevron-right"></i>
+    </a>
+    {% else %}
+    <span class="pagination-btn pagination-next disabled">
+      <span>Next</span>
+      <i data-lucide="chevron-right"></i>
+    </span>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
 
 {% endblock content %}
