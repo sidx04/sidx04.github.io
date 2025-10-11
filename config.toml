@@ -16,6 +16,10 @@ highlight_code = true
 highlight_theme = "gruvbox-dark"
 enable_raw_html = true
 
+# Taxonomies configuration
+taxonomies = [
+  { name = "tags", feed = true, paginate_by = 10 },
+]
 
 [extra]
 # Put all your custom variables here
