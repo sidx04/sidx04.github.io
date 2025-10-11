@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      {% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}
-    </title>
-    <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
 
-    <link rel="icon" href="{{ get_url(path='favicon.ico') }}" type="image/x-icon" />
-    <link rel="manifest" href="{{ get_url(path='site.webmanifest') }}" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    {% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}
+  </title>
+  <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
 
-    <!-- Development version -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  </head>
-  <body>
-    <!-- <nav class="navigation">
+  <link rel="icon" href="{{ get_url(path='favicon.ico') }}" type="image/x-icon" />
+  <link rel="manifest" href="{{ get_url(path='site.webmanifest') }}" />
+
+  <!-- Development version -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+  <!-- <nav class="navigation">
         <a href="{{ config.base_url }}" {% if current_path == '/' %}class="active"{% endif %}>/home</a>
         <a href="{{ get_url(path="about") }}" {% if current_path is matching("^/about") %}class="active"{% endif %}>/about</a>
         <a href="{{ get_url(path="posts") }}" {% if current_path is matching("^/posts") %}class="active"{% endif %}>/posts</a>
@@ -25,44 +27,45 @@
         </button>
     </nav> -->
 
-    <nav class="navigation">
-      <div class="navigation-menu">
-        <a href="{{ config.base_url }}" {% if current_path == '/' %}class="active"{% endif %}>/home</a>
-        <!-- <a href="{{ get_url(path="about") }}" {% if current_path is matching("^/about") %}class="active"{% endif %}>/about</a> -->
-        <a href="{{ get_url(path="posts") }}" {% if current_path is matching("^/posts") %}class="active"{% endif %}>/posts</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
-        </button>
-      </div>
-    </nav>
+  <nav class="navigation">
+    <div class="navigation-menu">
+      <a href="{{ config.base_url }}" {% if current_path=='/' %}class="active" {% endif %}>/home</a>
+      <!-- <a href="{{ get_url(path="about") }}" {% if current_path is matching("^/about") %}class="active"{% endif %}>/about</a> -->
+      <a href="{{get_url(path='posts')}}" {% if current_path is matching("^/posts") %}class="active" {% endif
+        %}>/posts</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+  </nav>
 
-    <main>{% block content %}{% endblock %}</main>
-    <footer>
-      <div class="footer">&copy; 2025, Siddhartha.</div>
-    </footer>
 
-    <script src="/scripts/theme.js"></script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-          displayMath: [
-            ["$$", "$$"],
-            ["\\[", "\\]"],
-          ],
-        },
-        svg: {
-          fontCache: "global",
-        },
-      };
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-      async
-    ></script>
-  </body>
+
+  <main>{% block content %}{% endblock %}</main>
+  <footer>
+    <div class="footer">&copy; 2025, Siddhartha.</div>
+  </footer>
+
+  <script src="/scripts/theme.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+        displayMath: [
+          ["$$", "$$"],
+          ["\\[", "\\]"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</body>
+
 </html>
