@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Siddhartha Pal&#x27;s Portfolio - first</title>
+    <subtitle>Personal blog about programming, technology, and technical explorations</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://sidx04.github.io/tags/first/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://sidx04.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-10-19T00:00:00+00:00</updated>
+    <id>https://sidx04.github.io/tags/first/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Placeholder Post</title>
+        <published>2025-10-19T00:00:00+00:00</published>
+        <updated>2025-10-19T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sidx04.github.io/posts/placeholder/"/>
+        <id>https://sidx04.github.io/posts/placeholder/</id>
+        
+        <content type="html" xml:base="https://sidx04.github.io/posts/placeholder/">&lt;p&gt;This is the content of my first post.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is some code:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;use &lt;&#x2F;span&gt;&lt;span&gt;tokio::net::TcpListener;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;use &lt;&#x2F;span&gt;&lt;span&gt;tokio::io::{AsyncReadExt, AsyncWriteExt};
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;#[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tokio&lt;&#x2F;span&gt;&lt;span&gt;::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;async &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;Result&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;(), &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;Box&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;dyn std::error::Error&amp;gt;&amp;gt; {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; listener &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;TcpListener::bind(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;127.0.0.1:8080&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;).await&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;?&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;loop &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;let &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;mut&lt;&#x2F;span&gt;&lt;span&gt; socket, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; listener.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;accept&lt;&#x2F;span&gt;&lt;span&gt;().await&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;?&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        tokio::spawn(async &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;move &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; buf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1024&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; In a loop, read data from the socket and write the data back.
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;loop &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;match&lt;&#x2F;span&gt;&lt;span&gt; socket.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;mut&lt;&#x2F;span&gt;&lt;span&gt; buf).await {
+&lt;&#x2F;span&gt;&lt;span&gt;                    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; socket closed
+&lt;&#x2F;span&gt;&lt;span&gt;                    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;Ok&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;                    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;Ok&lt;&#x2F;span&gt;&lt;span&gt;(n) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; n,
+&lt;&#x2F;span&gt;&lt;span&gt;                    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;Err&lt;&#x2F;span&gt;&lt;span&gt;(e) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;eprintln!&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;failed to read from socket; err = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;{:?}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, e);
+&lt;&#x2F;span&gt;&lt;span&gt;                        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;                    }
+&lt;&#x2F;span&gt;&lt;span&gt;                };
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Write the data back
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if let &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;Err&lt;&#x2F;span&gt;&lt;span&gt;(e) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; socket.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;write_all&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt;buf[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;..&lt;&#x2F;span&gt;&lt;span&gt;n]).await {
+&lt;&#x2F;span&gt;&lt;span&gt;                    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;eprintln!&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;failed to write to socket; err = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;{:?}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, e);
+&lt;&#x2F;span&gt;&lt;span&gt;                    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;                }
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;        });
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here is a &lt;a href=&quot;https:&#x2F;&#x2F;sidx04.github.io&quot;&gt;link&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;here-is-a-long-paragraph&quot;&gt;Here is a long paragraph&lt;&#x2F;h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia architecto tempore voluptatem deserunt recusandae obcaecati dolorem, sed dolorum quasi perspiciatis rem assumenda quidem vel eius debitis pariatur. Dolorum, fuga harum.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is an image:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;encrypted-tbn0.gstatic.com&#x2F;images?q=tbn:ANd9GcRRhrFFyI_ZsQxhtPPloslzBSIvQVTknnWnxg&amp;amp;s&quot; alt=&quot;placeholder&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Can it render math?
+$E = mc^2$. Yes! 🎉&lt;&#x2F;p&gt;
+&lt;p&gt;Can it render inline math?
+$$ f(x) = \alpha_v \times x $$&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
