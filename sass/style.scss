@@ -106,13 +106,15 @@ footer {
   // transition: border-color 0.3s ease;
 
   .footer {
-    font-family: "Computer Modern Typewriter", monospace;
-    letter-spacing: 1px;
+    font-family: "Computer Modern Bright", sans-serif;
+    letter-spacing: 0.5px;
     text-align: center;
-    color: var(--text-color);
+    color: var(--card-text);
     font-size: 0.9rem;
   }
 }
+
+
 
 // Theme toggle button
 .theme-toggle {
@@ -258,6 +260,11 @@ footer {
 .about-content .pronc {
   display: inline;
   color: var(--weak-color);
+}
+
+.about-content .name b {
+  font-size: 1.5rem;
+  display: inline;
 }
 
 .about-content img {
