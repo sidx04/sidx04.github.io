@@ -330,6 +330,39 @@ footer {
   }
 }
 
+.post-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-grow: 1;
+}
+
+.post-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  color: var(--weak-color);
+  text-decoration: none;
+  font-family: "Computer Modern Typewriter", monospace;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--link-color);
+    background: var(--bg-color, 0.75);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.65rem;
+  }
+}
+
 // Code block styles optimized for Zola's default output
 pre {
   background: var(--nav-hover);
@@ -339,7 +372,7 @@ pre {
   margin: 1.5rem 0;
   border-radius: 8px;
   overflow-x: auto;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   border: 1px solid var(--border-color);
   position: relative;

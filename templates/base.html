@@ -4,15 +4,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO Title -->
   <title>
-    {% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}
+    {% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% if config.description %} - {{
+    config.description }}{% endif %}{% endif %}
   </title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="{% if page.description %}{{ page.description }}{% elif section.description %}{{ section.description }}{% elif config.description %}{{ config.description }}{% else %}Personal blog and technical writing{% endif %}" />
+
+  {% if page.taxonomies.tags %}
+  <meta name="keywords" content="{{ page.taxonomies.tags | join(sep=', ') }}" />
+  {% endif %}
+
+  <meta name="author" content="{% if config.extra.author %}{{ config.extra.author }}{% else %}Siddhartha{% endif %}" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}" />
+  <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}" />
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}" />
+  <meta property="og:description"
+    content="{% if page.description %}{{ page.description }}{% elif section.description %}{{ section.description }}{% elif config.description %}{{ config.description }}{% else %}Personal blog and technical writing{% endif %}" />
+  <meta property="og:site_name" content="{{ config.title }}" />
+  {% if page.date %}
+  <meta property="article:published_time" content="{{ page.date | date(format='%Y-%m-%d') }}" />
+  {% endif %}
+  {% if page.taxonomies.tags %}
+  {% for tag in page.taxonomies.tags %}
+  <meta property="article:tag" content="{{ tag }}" />
+  {% endfor %}
+  {% endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="{{ current_url | default(value=config.base_url) }}" />
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}" />
+  <meta name="twitter:description"
+    content="{% if page.description %}{{ page.description }}{% elif section.description %}{{ section.description }}{% elif config.description %}{{ config.description }}{% else %}Personal blog and technical writing{% endif %}" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ current_url | default(value=config.base_url) }}" />
+
+  <!-- RSS Feed -->
+  {% if config.generate_feed %}
+  <link rel="alternate" type="application/rss+xml" title="{{ config.title }} RSS"
+    href="{{ get_url(path='rss.xml') }}" />
+  {% endif %}
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
 
+  <!-- Favicons -->
   <link rel="icon" href="{{ get_url(path='favicon.ico') }}" type="image/x-icon" />
   <link rel="manifest" href="{{ get_url(path='site.webmanifest') }}" />
 
-  <!-- Development version -->
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    {% if page %}
+    "@type": "BlogPosting",
+    "headline": "{{ page.title }}",
+    "description": "{{ page.description | default(value='') }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ config.extra.author | default(value='Siddhartha') }}"
+    },
+    {% if page.date %}
+    "datePublished": "{{ page.date | date(format='%Y-%m-%d') }}",
+    {% endif %}
+    "url": "{{ current_url }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ current_url }}"
+    },
+    {% if page.taxonomies.tags %}
+    "keywords": [{% for tag in page.taxonomies.tags %}"{{ tag }}"{% if not loop.last %},{% endif %}{% endfor %}],
+    {% endif %}
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ config.title }}",
+      "url": "{{ config.base_url }}"
+    }
+    {% else %}
+    "@type": "Website",
+    "name": "{{ config.title }}",
+    "description": "{{ config.description | default(value='') }}",
+    "url": "{{ config.base_url }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ config.extra.author | default(value='Siddhartha') }}"
+    }
+    {% endif %}
+  }
+  </script>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
