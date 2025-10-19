@@ -7,7 +7,19 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+# Generate RSS feed
+generate_feeds = true
+
+# Generate sitemap
+generate_sitemap = true
+
 title = "Onion House"
+description = "Personal blog about programming, technology, and technical explorations"
+
+# Taxonomies configuration
+taxonomies = [
+  { name = "tags", feed = true, paginate_by = 10 },
+]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -16,16 +28,11 @@ highlight_code = true
 highlight_theme = "gruvbox-dark"
 enable_raw_html = true
 
-# Taxonomies configuration
-taxonomies = [
-  { name = "tags", feed = true, paginate_by = 10 },
-]
-
 [extra]
 # Put all your custom variables here
+author = "Siddhartha"
+twitter = "@Rawonion04"  # Optional: add your Twitter handle
+github = "sidx04"  # Your GitHub username
 build_search_index = true
 default_language = "en"
-generate_feed = true
-feed_filename = "rss.xml"
-taxonomies = [{ name = "tags", feed = true }]
 posts = "/posts/:slug.md"
