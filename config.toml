@@ -13,7 +13,7 @@ generate_feeds = true
 # Generate sitemap
 generate_sitemap = true
 
-title = "Onion House"
+title = "Siddhartha Pal's Portfolio"
 description = "Personal blog about programming, technology, and technical explorations"
 
 # Taxonomies configuration
