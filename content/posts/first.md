@@ -1,9 +1,11 @@
 +++
 title = "Placeholder Post"
-date = 2024-03-20
+date = 2025-10-19
 description = "Placeholder to test features!"
 slug = "placeholder"
-tags = ["rust", "tokio", "networking", "tutorial"]
+
+[taxonomies]
+tags = ["first","tutorial"]
 +++
 
 This is the content of my first post.
@@ -49,7 +51,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 Here is a [link](https://sidx04.github.io).
 
-## Here is a long paragraph:
+## Here is a long paragraph
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia architecto tempore voluptatem deserunt recusandae obcaecati dolorem, sed dolorum quasi perspiciatis rem assumenda quidem vel eius debitis pariatur. Dolorum, fuga harum.
 
