@@ -691,6 +691,24 @@ table {
   }
 }
 
+// 404 page
+.error-page {
+  padding: 3rem 0;
+}
+
+.error-title {
+  font-family: "Computer Modern Serif", serif;
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+  color: var(--text-color);
+}
+
+.error-message {
+  color: var(--card-text);
+  font-size: 1rem;
+  margin: 0 0 1.5rem;
+}
+
 /* Post Content Styles */
 .post-content {
   line-height: 1.8;

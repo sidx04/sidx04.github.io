@@ -110,8 +110,8 @@
 <body>
   <nav class="navigation">
     <div class="navigation-menu">
-      <a href="{{ config.base_url }}" {% if current_path=='/' %}class="active" {% endif %}>/home</a>
-      <a href="{{get_url(path='posts')}}" {% if current_path is matching(pat="^/posts") %}class="active" {% endif
+      <a href="{{ config.base_url }}" {% if current_path is defined and current_path=='/' %}class="active" {% endif %}>/home</a>
+      <a href="{{get_url(path='posts')}}" {% if current_path is defined and current_path is matching(pat="^/posts") %}class="active" {% endif
         %}>/posts</a>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
         <i data-lucide="sun" class="icon-sun"></i>
@@ -149,6 +149,10 @@
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <!-- Analytics -->
+  <script data-goatcounter="https://sidx04.goatcounter.com/count"
+    async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>

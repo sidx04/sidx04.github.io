@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<div class="error-page">
+  <h1 class="error-title">404</h1>
+  <p class="error-message">This page doesn't exist.</p>
+  <div class="back-button">
+    <a href="{{ config.base_url }}">&larr; Back home</a>
+  </div>
+</div>
+{% endblock content %}
