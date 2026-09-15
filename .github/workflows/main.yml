@@ -1,9 +1,28 @@
-on: push
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 name: Build and deploy GH Pages
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.23.4
+      - name: build
+        run: zola build
+      - name: check
+        run: zola check --skip-external-links
+
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: checkout
         uses: actions/checkout@v4
