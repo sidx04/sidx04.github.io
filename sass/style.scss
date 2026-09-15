@@ -3,11 +3,12 @@
   --max-width: 900px;
   --padding-mobile: 1.5rem;
   --padding-desktop: 2rem;
-  --normal-font: 20px;
-  --phone-font: 15px;
+  --normal-font: 1rem;
+  --phone-font: 1rem;
 
   // Light theme colors (default)
   --bg-color: linear-gradient(135deg, #edd892 0%, #f4e4a6 50%, #e8d285 100%);
+  --bg-solid: #edd892;
   --text-color: #111111;
   --nav-color: #333333;
   --nav-hover: #000000;
@@ -26,6 +27,7 @@
 // Dark theme colors
 [data-theme="dark"] {
   --bg-color: linear-gradient(135deg, #1a1a1a 0%, #242424 50%, #1e1e1e 100%);
+  --bg-solid: #1a1a1a;
   --text-color: #e0e0e0;
   --nav-color: #e0e0e0;
   --nav-hover: #ffffff;
@@ -33,7 +35,7 @@
   --card-text: #b0b0b0;
   --border-color: #404040;
   --back-button-hover-color: #edd892;
-  --link-color: #d3869b;
+  --link-color: #a2c78abb;
   --weak-color: #a3a3a3;
 
   // Gradient variations for different elements
@@ -42,15 +44,93 @@
 }
 
 
-@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/bright.css");
-@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
+@font-face {
+  font-family: "Computer Modern Bright";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CMUBright-Roman.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Bright";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CMUBright-Oblique.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Bright";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/CMUBright-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Bright";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/CMUBright-SemiBoldOblique.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Bright";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CMUBright-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Bright";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CMUBright-BoldOblique.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Serif";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CMUSerif-Roman.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Serif";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CMUSerif-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Serif";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CMUSerif-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Serif";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CMUSerif-BoldItalic.woff2") format("woff2");
+}
 
 // Base styles
 html {
   font-size: var(--normal-font);
   box-sizing: border-box;
   min-height: 100vh;
-  background: var(--bg-color);
+  background-color: var(--bg-solid);
+  background-image: var(--bg-color);
   background-attachment: fixed;
 
   &.theme-loaded {
@@ -99,6 +179,7 @@ main {
 
 // Footer styles
 footer {
+  position: relative;
   flex-shrink: 0;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -116,6 +197,35 @@ footer {
       font-size: small;
     }
   }
+
+  .footer-feed {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--card-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-size: 0.8rem;
+
+    &:hover {
+      color: var(--link-color);
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @media (max-width: 480px) {
+      position: static;
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+  }
 }
 
 
@@ -131,7 +241,7 @@ footer {
   float: right;
   align-items: center;
   justify-content: center;
-  transition: color 4.5s ease;
+  transition: color ease;
 
   &:hover {
     color: var(--nav-hover);
@@ -566,10 +676,40 @@ table {
   margin: 1rem 0;
 }
 
-@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/typewriter.css");
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CMUTypewriter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CMUTypewriter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CMUTypewriter-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CMUTypewriter-BoldItalic.woff2") format("woff2");
+}
 
 .post-content pre code {
-  font-family: "Computer Modern Typewriter", monospace;
+  font-family: monospace;
   word-wrap: break-word;
 
   @media (max-width: 768px) {

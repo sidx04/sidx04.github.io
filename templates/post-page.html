@@ -13,6 +13,7 @@
       page.taxonomies and page.taxonomies.tags %}
       <div class="post-tags">
         {% for tag in page.taxonomies.tags %}
+        <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="tag">#{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}

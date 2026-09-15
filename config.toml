@@ -17,22 +17,19 @@ title = "Siddhartha Pal's Portfolio"
 description = "Personal blog about programming, technology, and technical explorations"
 
 # Taxonomies configuration
-taxonomies = [
-  { name = "tags", feed = true, paginate_by = 10 },
-]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 10 }]
 
 [markdown]
 # Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-highlight_theme = "gruvbox-dark"
-enable_raw_html = true
+# Theme can be customised via [markdown.highlighting].theme
+
+[markdown.highlighting]
+theme = "gruvbox-dark-hard"
 
 [extra]
 # Put all your custom variables here
 author = "Siddhartha"
-twitter = "@Rawonion04"  # Optional: add your Twitter handle
-github = "sidx04"  # Your GitHub username
-build_search_index = true
+twitter = "@Rawonion04"   # Optional: add your Twitter handle
+github = "sidx04"         # Your GitHub username
 default_language = "en"
 posts = "/posts/:slug.md"
