@@ -1,8 +1,8 @@
 +++
-title = "Placeholder Post"
+title = "Pilot"
 date = 2025-10-19
-description = "Placeholder to test features!"
-slug = "placeholder"
+description = "Let's see if it works!"
+slug = "pilot"
 
 [taxonomies]
 tags = ["first","tutorial"]

@@ -9,7 +9,9 @@
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-meta">
       {% if page.date %}
-      <time>{{ page.date | date(format="%B %d, %Y") }}.</time> {% endif %} {% if
+      <time>{{ page.date | date(format="%B %d, %Y") }}.</time>
+      <span class="post-reading-time">{{ page.reading_time }} min read</span>
+      {% endif %} {% if
       page.taxonomies and page.taxonomies.tags %}
       <div class="post-tags">
         {% for tag in page.taxonomies.tags %}
