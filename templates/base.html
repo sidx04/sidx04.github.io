@@ -128,13 +128,14 @@
 
   <main>{% block content %}{% endblock %}</main>
   <footer>
-    <div class="footer">&copy; 2025, Siddhartha.</div>
+    <div class="footer">&copy; 2026, Siddhartha.</div>
     {% if config.generate_feeds %}
     <a href="{{ get_url(path='atom.xml') }}" class="footer-feed" aria-label="RSS Feed"><i data-lucide="rss"></i><span class="footer-feed-label">Feed</span></a>
     {% endif %}
   </footer>
 
   <script src="/scripts/theme.js"></script>
+  <script src="/scripts/codeblocks.js"></script>
   <script>
     MathJax = {
       tex: {

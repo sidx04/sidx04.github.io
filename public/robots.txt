@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-
-# XML Sitemap
-Sitemap: https://sidx04.github.io/sitemap.xml
-
-# Disallow common non-content paths
-Disallow: /static/
-Disallow: *.json
