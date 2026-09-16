@@ -18,11 +18,13 @@ const getTheme = () => {
 const applyTheme = (theme) => {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
+  themeToggle.setAttribute("aria-checked", theme === "dark");
 };
 
 // Initialize theme before page load
 const theme = getTheme();
 document.documentElement.setAttribute("data-theme", theme);
+themeToggle.setAttribute("aria-checked", theme === "dark");
 
 // Add theme-loaded class once the initial theme is set
 document.addEventListener("DOMContentLoaded", () => {

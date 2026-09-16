@@ -113,9 +113,13 @@
       <a href="{{ config.base_url }}" {% if current_path is defined and current_path=='/' %}class="active" {% endif %}>/home</a>
       <a href="{{get_url(path='posts')}}" {% if current_path is defined and current_path is matching(pat="^/posts") %}class="active" {% endif
         %}>/posts</a>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <i data-lucide="sun" class="icon-sun"></i>
-        <i data-lucide="moon" class="icon-moon"></i>
+      <button id="theme-toggle" class="theme-toggle" role="switch" aria-checked="false" aria-label="Toggle theme">
+        <span class="toggle-track">
+          <span class="toggle-thumb">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </span>
+        </span>
       </button>
     </div>
   </nav>
@@ -126,7 +130,7 @@
   <footer>
     <div class="footer">&copy; 2025, Siddhartha.</div>
     {% if config.generate_feeds %}
-    <a href="{{ get_url(path='atom.xml') }}" class="footer-feed"><i data-lucide="rss"></i>Feed</a>
+    <a href="{{ get_url(path='atom.xml') }}" class="footer-feed" aria-label="RSS Feed"><i data-lucide="rss"></i><span class="footer-feed-label">Feed</span></a>
     {% endif %}
   </footer>
 
